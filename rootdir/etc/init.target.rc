@@ -388,19 +388,6 @@ service dcvsd1 /system/bin/dcvsd -c 1 -f /data/misc/dcvsd/dcvsd1.conf
     user root
     disabled
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
-    user root
-    disabled
-
-service thermald /system/bin/thermald
-    class main
-    user root
-    group root
-    disabled
-
-on property.ro.modem.links.done=1
-    start thermald
-
 # qrngd will drop permissions after startup
 service qrngd /system/bin/qrngd -f
     class main
